@@ -7,7 +7,7 @@ function check() {
     if (Number(first.value) + Number(second.value) + Number(third.value) === 180) {
         document.querySelector("#op").innerText = "Yes,these angles make a triangle";
     }
-    if (first.value == "" || second.value == "" || third.value == "" || Number(first.value) < 0 || Number(second.value) < 0 || Number(third.value) < 0) {
+    else if (first.value == "" || second.value == "" || third.value == "" || Number(first.value) < 0 || Number(second.value) < 0 || Number(third.value) < 0) {
         document.querySelector("#op").innerText = "Please enter correct value";
     }
     else {
