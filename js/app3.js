@@ -21,8 +21,18 @@ function areaop2() {
     var os = s / 2;
     var cont =
         os * (os - afirst.value) * (os - bfirst.value) * (os - cfirst.value);
-    var finalcont = Math.sqrt(cont);
-    aop1.innerText = finalcont;
+        var finalcont = Math.sqrt(cont);
+        if(Number(afirst.value) + Number(bfirst.value) < Number(cfirst.value) ||
+            Number(bfirst.value) + Number(cfirst.value)< Number(afirst.value) ||
+            Number(afirst.value) + Number(cfirst.value) < Number(bfirst.value)){
+            aop1.innerText="Enter valid length of sides";
+        }
+        else if(Number(afirst.value)<=0 || Number(bfirst.value)<=0 ||Number(cfirst.value)<=0){
+            aop1.innerText="Enter correct value";
+    }
+    else {
+        aop1.innerText = finalcont;
+    }
 }
 function areaangle() {
     var angval = Number(angle.value);
@@ -32,11 +42,21 @@ function areaangle() {
         Math.sin((angval * Math.PI) / 180);
 
     var fv = val / 2;
-    aop2.innerText = fv;
+    if(angval<=0 || asecond.value<=0 || bsecond.value<=0 || fv<=0){
+        aop2.innerText="Enter correct value";
+    }
+    else {
+        aop2.innerText = fv;
+    }
 }
 function bh() {
     var bha = Number(athird.value) * Number(bthird.value) / 2;
+    if(athird.value<=0 || bthird.value<=0){
+        aop3.innerText="Enter correct value";
+    }
+    else{
     aop3.innerText = bha;
+    }
 }
 
 function rb1disp() {
